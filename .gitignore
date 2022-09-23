@@ -25,3 +25,5 @@ yarn-error.log*
 .python_packages
 __pycache__
 .venv
+
+.vscode
