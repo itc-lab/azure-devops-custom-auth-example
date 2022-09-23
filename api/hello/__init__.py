@@ -19,14 +19,23 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if name:
         return func.HttpResponse(
-            json.dumps({"message":f"Hello, {name}. This HTTP triggered function executed successfully."}),
+            json.dumps(
+                {
+                    "message": f"Hello, {name}."
+                    "This HTTP triggered function executed successfully."
+                }
+            ),
             mimetype="application/json",
         )
     else:
         return func.HttpResponse(
-            json.dumps({"message":"This HTTP triggered function executed successfully."
-            "Pass a name in the query string"
-            " or in the request body for a personalized response."}),
+            json.dumps(
+                {
+                    "message": "This HTTP triggered function executed successfully."
+                    "Pass a name in the query string"
+                    " or in the request body for a personalized response."
+                }
+            ),
             status_code=200,
             mimetype="application/json",
         )
