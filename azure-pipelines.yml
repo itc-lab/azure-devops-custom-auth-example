@@ -1,0 +1,16 @@
+trigger:
+  - master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+    submodules: true
+  - task: AzureStaticWebApp@0
+    inputs:
+      app_location: "/" # App source code path relative to cwd
+      api_location: "api" # Api source code path relative to cwd
+      output_location: "build" # Built app content directory relative to app_location - optional
+      azure_static_web_apps_api_token: $(deployment_token)
+

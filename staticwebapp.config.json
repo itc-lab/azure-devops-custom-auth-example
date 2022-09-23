@@ -1,0 +1,39 @@
+{
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/<TENANT_ID>/v2.0",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "route": "/",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/index.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/static/js/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/static/css/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/static/media/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
+}
